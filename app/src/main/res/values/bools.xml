@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="application_allow_backup">true</bool>
+    <bool name="application_supports_rtl">true</bool>
+</resources>
