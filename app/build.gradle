@@ -32,6 +32,9 @@ android {
 
         def pod = properties.getProperty("POD")
         it.buildConfigField "String", "POD", pod
+
+        def wikiBaseUrl = properties.getProperty("WIKI_BASE_URL")
+        it.buildConfigField "String", "WIKI_BASE_URL", wikiBaseUrl
     }
 
     buildTypes {
