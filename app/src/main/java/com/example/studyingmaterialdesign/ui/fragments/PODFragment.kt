@@ -42,9 +42,8 @@ class PODFragment : Fragment() {
 
         with(binding) {
             chipGroup.check(R.id.chip_today)
-            chipGroup.setOnCheckedChangeListener { _, checkedId ->
-                viewModel.load()
-            }
+            //TODO(load based on date: yesterday, today, tomorrow)
+            chipGroup.setOnCheckedChangeListener { _, _ -> viewModel.load() }
             textInputLayout.setEndIconOnClickListener {
                 startActivity(Intent(Intent.ACTION_VIEW).apply {
                     data =
