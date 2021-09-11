@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fragment_pod_collapsing_toolbar_layout_height">240dp</dimen>
+    <dimen name="match_constraints">0dp</dimen>
+    <dimen name="fragment_pod_textinputlayout_margin">5dp</dimen>
+    <dimen name="text_input_layout_box_corner">15dp</dimen>
+    <dimen name="fragment_pod_textview_margintop">10dp</dimen>
+    <dimen name="fragment_pod_textview_margin">5dp</dimen>
+    <dimen name="fragment_pod_textview_title_textsize">24sp</dimen>
+    <dimen name="fragment_pod_textview_explanation_textsize">16sp</dimen>
+</resources>

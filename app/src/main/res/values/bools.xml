@@ -2,4 +2,6 @@
 <resources>
     <bool name="application_allow_backup">true</bool>
     <bool name="application_supports_rtl">true</bool>
+    <bool name="fragment_pod_chipgroup_single_selection">true</bool>
+    <bool name="fragment_main_text_input_layout_counter_enabled">true</bool>
 </resources>
