@@ -15,7 +15,7 @@ import java.io.IOException
 
 class Repository {
     private val podApi: PODApi = Retrofit.Builder()
-        .baseUrl("https://api.nasa.gov")
+        .baseUrl(BuildConfig.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
         .client(
             OkHttpClient.Builder().apply {

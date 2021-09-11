@@ -23,8 +23,15 @@ android {
     buildTypes.each {
         Properties properties = new Properties()
         properties.load(project.rootProject.file("app.properties").newDataInputStream())
+
         def nasaApiKey = properties.getProperty("NASA_API_KEY")
         it.buildConfigField "String", "NASA_API_KEY", nasaApiKey
+
+        def baseUrl = properties.getProperty("BASE_URL")
+        it.buildConfigField "String", "BASE_URL", baseUrl
+
+        def pod = properties.getProperty("POD")
+        it.buildConfigField "String", "POD", pod
     }
 
     buildTypes {
