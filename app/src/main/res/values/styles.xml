@@ -5,8 +5,6 @@
         <item name="counterEnabled">@bool/fragment_main_text_input_layout_counter_enabled</item>
         <item name="counterMaxLength">@integer/fragment_main_text_input_layout_counter_max_length</item>
         <item name="helperText">@string/wiki_helper_text</item>
-        <item name="hintTextColor">@color/dark_gray</item>
-        <item name="boxStrokeColor">@color/purple_200</item>
         <item name="boxStrokeErrorColor">@color/red</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/text_input_layout_box_corner</item>
         <item name="boxCornerRadiusBottomStart">@dimen/text_input_layout_box_corner</item>
@@ -18,9 +16,9 @@
     <style name="CustomStyleTextView">
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:layout_marginTop">@dimen/fragment_pod_textview_margintop</item>
-        <item name="android:layout_marginStart">@dimen/fragment_pod_textview_margin</item>
-        <item name="android:layout_marginEnd">@dimen/fragment_pod_textview_margin</item>
+        <item name="android:layout_marginTop">@dimen/fragment_pod_margin10</item>
+        <item name="android:layout_marginStart">@dimen/fragment_pod_margin5</item>
+        <item name="android:layout_marginEnd">@dimen/fragment_pod_margin5</item>
     </style>
     <style name="CustomStyleTextView.Title">
         <item name="android:textSize">@dimen/fragment_pod_textview_title_textsize</item>

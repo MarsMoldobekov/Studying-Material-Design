@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
@@ -45,24 +46,34 @@ class PODFragment : Fragment() {
             //TODO(load based on date: yesterday, today, tomorrow)
             chipGroup.setOnCheckedChangeListener { _, _ -> viewModel.load() }
             textInputLayout.setEndIconOnClickListener {
-                startActivity(Intent(Intent.ACTION_VIEW).apply {
-                    data =
-                        Uri.parse(BuildConfig.WIKI_BASE_URL + binding.textInputEditText.text.toString())
-                })
+                startActivityActionView(BuildConfig.WIKI_BASE_URL + binding.textInputEditText.text.toString())
+            }
+            buttonNasa.setOnClickListener { startActivityActionView(BuildConfig.NASA_OFFICIAL_SITE) }
+            bar.replaceMenu(R.menu.menu_bottom_app_bar)
+            bar.setOnMenuItemClickListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.app_bar_settings -> Toast.makeText(context, "Settings", Toast.LENGTH_SHORT)
+                        .show()
+                    R.id.app_bar_fav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT)
+                        .show()
+                }
+                true
             }
         }
 
         with(viewModel) {
             load()
-            getLiveDataPOD()?.observe(viewLifecycleOwner) {
-                renderData(it)
-            }
+            getLiveDataPOD()?.observe(viewLifecycleOwner) { renderData(it) }
         }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    private fun startActivityActionView(uriString: String) {
+        startActivity(Intent(Intent.ACTION_VIEW).apply { data = Uri.parse(uriString) })
     }
 
     private fun renderData(podData: PODData) {

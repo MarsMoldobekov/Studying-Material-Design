@@ -35,6 +35,9 @@ android {
 
         def wikiBaseUrl = properties.getProperty("WIKI_BASE_URL")
         it.buildConfigField "String", "WIKI_BASE_URL", wikiBaseUrl
+
+        def nasaOfficialSite = properties.getProperty("NASA_OFFICIAL_SITE")
+        it.buildConfigField "String", "NASA_OFFICIAL_SITE", nasaOfficialSite
     }
 
     buildTypes {

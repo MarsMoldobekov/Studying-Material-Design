@@ -13,8 +13,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_hamburger_menu_bottom_bar"
             app:title="@string/app_name"
-            app:titleTextColor="@color/text_color_primary" />
+            app:titleTextColor="@color/white" />
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chip_group"
@@ -45,9 +46,11 @@
         </com.google.android.material.chip.ChipGroup>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/fragment_pod_nested_scroll_view_padding_down"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -79,7 +82,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_input_layout"
-                app:srcCompat="@drawable/ic_wikipedia" />
+                app:srcCompat="@drawable/ic_no_photo_vector" />
 
             <TextView
                 android:id="@+id/title"
@@ -101,15 +104,36 @@
                 app:layout_constraintTop_toBottomOf="@id/title"
                 tools:text="@string/explanation_example" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_pod_bottom_app_bar_height"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/black"
+        app:hideOnScroll="true"
+        app:layout_scrollFlags="scroll|enterAlways">
+
+        <Button
+            android:id="@+id/button_nasa"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/nasa"
+            android:textColor="@color/white" />
+    </com.google.android.material.bottomappbar.BottomAppBar>
 
     <FrameLayout
         android:id="@+id/loadingLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/gray"
-        android:visibility="gone"
-        tools:visibility="visible">
+        android:visibility="gone">
 
         <ProgressBar
             style="?android:attr/progressBarStyleLarge"

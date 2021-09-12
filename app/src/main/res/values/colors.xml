@@ -13,4 +13,7 @@
     <color name="gray">#80FFFFFF</color>
     <color name="text_color_primary">#012443</color>
     <color name="red">#f23022</color>
+    <color name="fragment_pod_main_background">#FFFEB7</color>
+    <color name="fragment_pod_bottom_app_bar">#4A403A</color>
+    <color name="box_stroke_color">#B1FFFD</color>
 </resources>
