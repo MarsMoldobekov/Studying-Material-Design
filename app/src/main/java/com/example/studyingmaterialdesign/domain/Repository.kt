@@ -26,8 +26,8 @@ class Repository {
         .build()
         .create(PODApi::class.java)
 
-    suspend fun load(): retrofit2.Response<PODResponse> =
-        podApi.getPictureOfTheDay(BuildConfig.NASA_API_KEY)
+    suspend fun load(date: String): retrofit2.Response<PODResponse> =
+        podApi.getPictureOfTheDay(date, BuildConfig.NASA_API_KEY)
 
     private class PODInterceptor : Interceptor {
         @Throws(IOException::class)

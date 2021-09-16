@@ -8,5 +8,8 @@ import retrofit2.http.Query
 
 interface PODApi {
     @GET(value = BuildConfig.POD)
-    suspend fun getPictureOfTheDay(@Query(value = "api_key") apiKey: String): Response<PODResponse>
+    suspend fun getPictureOfTheDay(
+        @Query(value = "date") date: String,
+        @Query(value = "api_key") apiKey: String
+    ): Response<PODResponse>
 }

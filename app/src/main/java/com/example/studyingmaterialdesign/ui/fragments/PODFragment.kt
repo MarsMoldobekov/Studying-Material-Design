@@ -2,6 +2,7 @@ package com.example.studyingmaterialdesign.ui.fragments
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,9 @@ import com.example.studyingmaterialdesign.databinding.FragmentPodBinding
 import com.example.studyingmaterialdesign.viewmodel.PODData
 import com.example.studyingmaterialdesign.viewmodel.ViewModel
 import com.google.android.material.snackbar.Snackbar
+import java.time.LocalDate
 
+//TODO(add chipGroup for hdurl and url, delete tomorrow chip)
 class PODFragment : Fragment() {
     companion object {
         fun newInstance(): Fragment = PODFragment()
@@ -43,27 +46,46 @@ class PODFragment : Fragment() {
 
         with(binding) {
             chipGroup.check(R.id.chip_today)
-            //TODO(load based on date: yesterday, today, tomorrow)
-            chipGroup.setOnCheckedChangeListener { _, _ -> viewModel.load() }
+            chipGroup.setOnCheckedChangeListener { _, checkedId ->
+                when (checkedId) {
+                    R.id.chip_yesterday -> {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            viewModel.load(LocalDate.now().minusDays(1).toString())
+                        }
+                    }
+                    R.id.chip_today -> {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            viewModel.load(LocalDate.now().toString())
+                        }
+                    }
+                    R.id.chip_tomorrow -> {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            viewModel.load(LocalDate.now().toString())
+                        }
+                    }
+                }
+            }
             textInputLayout.setEndIconOnClickListener {
                 startActivityActionView(BuildConfig.WIKI_BASE_URL + binding.textInputEditText.text.toString())
             }
             buttonNasa.setOnClickListener { startActivityActionView(BuildConfig.NASA_OFFICIAL_SITE) }
             bar.replaceMenu(R.menu.menu_bottom_app_bar)
-            bar.setOnMenuItemClickListener { menuItem ->
+            bar.setOnMenuItemClickListener OnMenuItemClickListener@{ menuItem ->
                 when (menuItem.itemId) {
                     R.id.app_bar_settings -> Toast.makeText(context, "Settings", Toast.LENGTH_SHORT)
                         .show()
                     R.id.app_bar_fav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT)
                         .show()
                 }
-                true
+                return@OnMenuItemClickListener true
             }
         }
 
         with(viewModel) {
-            load()
-            getLiveDataPOD()?.observe(viewLifecycleOwner) { renderData(it) }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                load(LocalDate.now().toString())
+            }
+            getLiveDataPOD().observe(viewLifecycleOwner) { renderData(it) }
         }
     }
 
@@ -82,7 +104,7 @@ class PODFragment : Fragment() {
                 binding.loadingLayout.visibility = View.GONE
                 binding.imageView.setImageResource(R.drawable.ic_no_photo_vector)
                 Snackbar.make(binding.root, podData.throwable.toString(), Snackbar.LENGTH_LONG)
-                    .setAction("RE-LOAD") { viewModel.load() }.show()
+                    .setAction("RE-LOAD") { /*viewModel.load()*/ }.show()
             }
             PODData.Loading -> {
                 binding.loadingLayout.visibility = View.VISIBLE
