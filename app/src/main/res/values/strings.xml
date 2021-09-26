@@ -11,5 +11,5 @@
     <string name="favourite">Favourite</string>
     <string name="settings">Settings</string>
     <string name="theme_category_title">Themes</string>
-    <string name="font_category_title">Font</string>
+    <string name="description_of_themes_list">Choose theme</string>
 </resources>

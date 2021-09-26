@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
@@ -34,6 +35,20 @@ class PODFragment : Fragment() {
     private val onCheckedChangeListener = OnCheckedChangeListener()
     private var day = Days.TODAY
 
+    private val onMenuItemClickListener = Toolbar.OnMenuItemClickListener { menuItem ->
+        when (menuItem.itemId) {
+            R.id.app_bar_settings -> {
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.activity_main_container, MainPreferencesFragment.newInstance())
+                    .addToBackStack(MainPreferencesFragment.MAIN_PREFERENCES_FRAGMENT_TAG)
+                    .commit()
+            }
+            R.id.app_bar_fav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT)
+                .show()
+        }
+        return@OnMenuItemClickListener true
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -54,15 +69,7 @@ class PODFragment : Fragment() {
             }
             buttonNasa.setOnClickListener { startActivityActionView(BuildConfig.NASA_OFFICIAL_SITE) }
             bar.replaceMenu(R.menu.menu_bottom_app_bar)
-            bar.setOnMenuItemClickListener { menuItem ->
-                when (menuItem.itemId) {
-                    R.id.app_bar_settings -> Toast.makeText(context, "Settings", Toast.LENGTH_SHORT)
-                        .show()
-                    R.id.app_bar_fav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT)
-                        .show()
-                }
-                return@setOnMenuItemClickListener true
-            }
+            bar.setOnMenuItemClickListener(onMenuItemClickListener)
         }
 
         with(viewModel) {

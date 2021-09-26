@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
-        android:key="theme"
-        android:title="@string/theme_category_title">
-        <!-- TODO(create a choice between themes) -->
-    </PreferenceCategory>
-    <PreferenceCategory
-        android:key="font"
-        android:title="@string/font_category_title">
-        <!-- TODO(create a choice between fonts) -->
-    </PreferenceCategory>
+    <ListPreference
+        android:entries="@array/themes"
+        android:entryValues="@array/themes_values"
+        android:key="themes"
+        android:summary="@string/description_of_themes_list"
+        android:title="@string/theme_category_title" />
 </PreferenceScreen>
