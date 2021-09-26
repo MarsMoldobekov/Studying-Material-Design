@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary_dark">#000000</color>
+    <color name="color_primary">#212121</color>
+    <color name="color_primary_variant">#484848</color>
+    <color name="color_text">#ffffff</color>
+    <color name="color_secondary">#3e2723</color>
+    <color name="pod_fragment_nested_scroll_view_color">#6a4f4b</color>
+</resources>

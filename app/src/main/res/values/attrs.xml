@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="color_primary" format="reference" />
+    <attr name="color_white" format="reference" />
+    <attr name="nested_scroll_view_color" format="reference" />
+    <attr name="color_typical_text" format="reference" />
+</resources>

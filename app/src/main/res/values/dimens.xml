@@ -10,4 +10,5 @@
     <dimen name="fragment_pod_textview_explanation_textsize">16sp</dimen>
     <dimen name="fragment_pod_bottom_app_bar_height">58dp</dimen>
     <dimen name="fragment_pod_nested_scroll_view_padding_down">100dp</dimen>
+    <dimen name="chip_margin_start">20dp</dimen>
 </resources>

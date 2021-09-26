@@ -1,18 +1,70 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.StudyingMaterialDesign" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.DayNight" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="android:textColorPrimary">@color/white</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorPrimary">?color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="android:textColorPrimary">@color/color_text</item>
+        <item name="colorOnPrimary">@color/color_text</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorSecondaryVariant">@color/color_white</item>
+        <item name="colorOnSecondary">@color/color_white</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary_dark</item>
+        <!-- Customize your theme here. -->
+        <item name="color_primary">@color/color_primary</item>
+        <item name="nested_scroll_view_color">@color/pod_fragment_nested_scroll_view_color</item>
+        <item name="color_typical_text">@color/color_text</item>
+    </style>
+    <style name="Theme.BlackAndWhite" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimaryDark">?color_primary</item>
+        <item name="colorPrimary">?color_primary</item>
+        <item name="colorPrimaryVariant">?color_primary</item>
+        <item name="android:textColorPrimary">?color_white</item>
+        <item name="colorOnPrimary">?color_white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">?color_primary</item>
+        <item name="colorSecondaryVariant">?color_primary</item>
+        <item name="colorOnSecondary">?color_white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?color_primary</item>
+        <!-- Customize your theme here. -->
+        <item name="color_primary">@color/color_black</item>
+        <item name="color_white">@color/color_white</item>
+        <item name="nested_scroll_view_color">?color_white</item>
+        <item name="color_typical_text">?color_primary</item>
+    </style>
+    <style name="Theme.Moon" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="android:textColorPrimary">@color/color_text</item>
+        <item name="colorOnPrimary">@color/color_text</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorSecondaryVariant">@color/color_white</item>
+        <item name="colorOnSecondary">@color/color_white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary_dark</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="Theme.Mars" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="android:textColorPrimary">@color/color_text</item>
+        <item name="colorOnPrimary">@color/color_text</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorSecondaryVariant">@color/color_white</item>
+        <item name="colorOnSecondary">@color/color_white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary_dark</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

@@ -5,7 +5,7 @@
         <item name="counterEnabled">@bool/fragment_main_text_input_layout_counter_enabled</item>
         <item name="counterMaxLength">@integer/fragment_main_text_input_layout_counter_max_length</item>
         <item name="helperText">@string/wiki_helper_text</item>
-        <item name="boxStrokeErrorColor">@color/red</item>
+        <item name="boxStrokeErrorColor">@color/color_error</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/text_input_layout_box_corner</item>
         <item name="boxCornerRadiusBottomStart">@dimen/text_input_layout_box_corner</item>
         <item name="boxCornerRadiusTopEnd">@dimen/text_input_layout_box_corner</item>
@@ -15,7 +15,7 @@
     </style>
     <style name="CustomStyleTextView">
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?color_typical_text</item>
         <item name="android:layout_marginTop">@dimen/fragment_pod_margin10</item>
         <item name="android:layout_marginStart">@dimen/fragment_pod_margin5</item>
         <item name="android:layout_marginEnd">@dimen/fragment_pod_margin5</item>
@@ -25,5 +25,9 @@
     </style>
     <style name="CustomStyleTextView.Explanation">
         <item name="android:textSize">@dimen/fragment_pod_textview_explanation_textsize</item>
+    </style>
+    <style name="ChipChoice" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 </resources>

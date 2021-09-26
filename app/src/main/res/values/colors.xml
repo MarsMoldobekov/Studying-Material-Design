@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_primary_dark">#FFADAD</color>
-    <color name="color_primary">#FFDAC7</color>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="dark_gray">#66000000</color>
-    <color name="gray">#80FFFFFF</color>
-    <color name="text_color_primary">#012443</color>
-    <color name="red">#f23022</color>
-    <color name="fragment_pod_main_background">#FFFEB7</color>
-    <color name="fragment_pod_bottom_app_bar">#4A403A</color>
-    <color name="box_stroke_color">#B1FFFD</color>
+    <color name="color_primary_dark">#8aacc8</color>
+    <color name="color_primary">#bbdefb</color>
+    <color name="color_primary_variant">#eeffff</color>
+    <color name="color_text">#000000</color>
+    <color name="color_secondary">#e1f5fe</color>
+
+    <color name="color_white">#ffffff</color>
+    <color name="color_error">#f23022</color>
+    <color name="color_black">#000000</color>
+    <color name="color_dark_gray">#66000000</color>
+    <color name="color_gray">#80FFFFFF</color>
+
+    <color name="ic_launcher_background">#ffffff</color>
+    <color name="pod_fragment_nested_scroll_view_color">#f9fbe7</color>
 </resources>

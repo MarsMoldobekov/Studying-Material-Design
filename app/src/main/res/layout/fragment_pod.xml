@@ -14,8 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:navigationIcon="@drawable/ic_hamburger_menu_bottom_bar"
-            app:title="@string/app_name"
-            app:titleTextColor="@color/white" />
+            app:title="@string/app_name" />
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chip_group"
@@ -25,30 +24,21 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_yesterday"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/ChipChoice"
+                android:layout_marginStart="@dimen/chip_margin_start"
                 android:text="@string/yesterday" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_today"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/ChipChoice"
                 android:text="@string/today" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_tomorrow"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tomorrow" />
         </com.google.android.material.chip.ChipGroup>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="?nested_scroll_view_color"
         android:clipToPadding="false"
         android:paddingBottom="@dimen/fragment_pod_nested_scroll_view_padding_down"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -73,7 +63,7 @@
                     android:id="@+id/text_input_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/color_black" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.example.studyingmaterialdesign.ui.utils.EquilateralImageView
@@ -112,7 +102,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/fragment_pod_bottom_app_bar_height"
         android:layout_gravity="bottom"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="?color_primary"
         app:hideOnScroll="true"
         app:layout_scrollFlags="scroll|enterAlways">
 
@@ -125,15 +115,14 @@
             android:layout_centerInParent="true"
             android:background="?android:attr/selectableItemBackground"
             android:gravity="center"
-            android:text="@string/nasa"
-            android:textColor="@color/white" />
+            android:text="@string/nasa" />
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <FrameLayout
         android:id="@+id/loadingLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray"
+        android:background="@color/color_gray"
         android:visibility="gone">
 
         <ProgressBar
