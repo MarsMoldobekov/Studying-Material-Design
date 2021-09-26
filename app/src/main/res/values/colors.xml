@@ -6,6 +6,12 @@
     <color name="color_text">#000000</color>
     <color name="color_secondary">#e1f5fe</color>
 
+    <color name="color_primary_dark_red">#9b0000</color>
+    <color name="color_primary_red">#d50000</color>
+    <color name="color_primary_variant_red">#ff5131</color>
+    <color name="color_secondary_red">#ff8a80</color>
+    <color name="color_secondary_variant_red">#ffbcaf</color>
+
     <color name="color_white">#ffffff</color>
     <color name="color_error">#f23022</color>
     <color name="color_black">#000000</color>
