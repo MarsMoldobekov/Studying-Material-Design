@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
             .unregisterOnSharedPreferenceChangeListener(onPreferenceChangeListener)
     }
 
+    //TODO: extract string resource
     private fun setCurrentTheme() {
         when (PreferenceManager.getDefaultSharedPreferences(this).getString("themes", "Original")) {
             "Original" -> setTheme(R.style.Theme_DayNight)

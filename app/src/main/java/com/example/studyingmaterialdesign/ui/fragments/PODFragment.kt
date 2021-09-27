@@ -65,16 +65,16 @@ class PODFragment : Fragment() {
             chipGroup.check(R.id.chip_today)
             chipGroup.setOnCheckedChangeListener(onCheckedChangeListener)
             textInputLayout.setEndIconOnClickListener {
-                startActivityActionView(BuildConfig.WIKI_BASE_URL + binding.textInputEditText.text.toString())
+                startActivityActionView("https://en.wikipedia.org/wiki/${binding.textInputEditText.text.toString()}")
             }
-            buttonNasa.setOnClickListener { startActivityActionView(BuildConfig.NASA_OFFICIAL_SITE) }
+            buttonNasa.setOnClickListener { startActivityActionView("https://www.nasa.gov/") }
             bar.replaceMenu(R.menu.menu_bottom_app_bar)
             bar.setOnMenuItemClickListener(onMenuItemClickListener)
         }
 
         with(viewModel) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                load(LocalDate.now().toString())
+                loadPOD(LocalDate.now().toString())
             }
             getLiveDataPOD().observe(viewLifecycleOwner) { renderData(it) }
         }
@@ -125,7 +125,7 @@ class PODFragment : Fragment() {
                 day = when (checkedId) {
                     R.id.chip_yesterday -> Days.YESTERDAY
                     R.id.chip_today -> Days.TODAY
-                    else -> day //CRUTCH
+                    else -> day //CRUTCH: when the chip is pressed again, $checkedId is returned with a value of -1. I do not know why.
                 }
                 loadByDay()
             } else {
@@ -136,8 +136,8 @@ class PODFragment : Fragment() {
         @RequiresApi(Build.VERSION_CODES.O)
         fun loadByDay() {
             when (day) {
-                Days.YESTERDAY -> viewModel.load(LocalDate.now().minusDays(1).toString())
-                Days.TODAY -> viewModel.load(LocalDate.now().toString())
+                Days.YESTERDAY -> viewModel.loadPOD(LocalDate.now().minusDays(1).toString())
+                Days.TODAY -> viewModel.loadPOD(LocalDate.now().toString())
             }
         }
     }
