@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_menu_navigation"
+    app:startDestination="@id/navigation_pod">
+
+    <fragment
+        android:id="@+id/navigation_pod"
+        android:name="com.example.studyingmaterialdesign.ui.fragments.PODFragment"
+        android:label="fragment_pod"
+        tools:layout="@layout/fragment_pod" />
+
+    <fragment
+        android:id="@+id/navigation_flr"
+        android:name="com.example.studyingmaterialdesign.ui.fragments.FLRFragment"
+        android:label="fragment_flr"
+        tools:layout="@layout/fragment_flr" />
+
+    <fragment
+        android:id="@+id/navigation_epic"
+        android:name="com.example.studyingmaterialdesign.ui.fragments.EPICFragment"
+        android:label="fragment_epic"
+        tools:layout="@layout/fragment_epic" />
+</navigation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_pod"
+        android:icon="@drawable/ic_picture"
+        android:title="@string/pod" />
+    <item
+        android:id="@+id/navigation_flr"
+        android:icon="@drawable/ic_solar_flare"
+        android:title="@string/flr" />
+    <item
+        android:id="@+id/navigation_epic"
+        android:icon="@drawable/ic_earth"
+        android:title="@string/epic" />
+</menu>

@@ -4,72 +4,27 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
-import com.example.studyingmaterialdesign.BuildConfig
 import com.example.studyingmaterialdesign.R
 import com.example.studyingmaterialdesign.databinding.FragmentPodBinding
 import com.example.studyingmaterialdesign.viewmodel.PODData
 import com.example.studyingmaterialdesign.viewmodel.ViewModel
-import com.google.android.material.chip.ChipGroup
 import com.google.android.material.snackbar.Snackbar
 import java.time.LocalDate
-import java.util.*
 
-//TODO(add chipGroup for hdurl and url in settings)
-class PODFragment : Fragment() {
-    private var _binding: FragmentPodBinding? = null
-    private val binding get() = _binding!!
-
+//TODO(add viewpager2 for two images: regular and in hd)
+class PODFragment : ViewBindingFragment<FragmentPodBinding>(FragmentPodBinding::inflate) {
     private val viewModel: ViewModel by lazy {
         ViewModelProvider(this).get(ViewModel::class.java)
-    }
-
-    private val onCheckedChangeListener = OnCheckedChangeListener()
-    private var day = Days.TODAY
-
-    private val onMenuItemClickListener = Toolbar.OnMenuItemClickListener { menuItem ->
-        when (menuItem.itemId) {
-            R.id.app_bar_settings -> {
-                requireActivity().supportFragmentManager.beginTransaction()
-                    .replace(R.id.activity_main_container, MainPreferencesFragment.newInstance())
-                    .addToBackStack(MainPreferencesFragment.MAIN_PREFERENCES_FRAGMENT_TAG)
-                    .commit()
-            }
-            R.id.app_bar_fav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT)
-                .show()
-        }
-        return@OnMenuItemClickListener true
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentPodBinding.inflate(inflater, container, false)
-        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(binding) {
-            chipGroup.check(R.id.chip_today)
-            chipGroup.setOnCheckedChangeListener(onCheckedChangeListener)
-            textInputLayout.setEndIconOnClickListener {
-                startActivityActionView("https://en.wikipedia.org/wiki/${binding.textInputEditText.text.toString()}")
-            }
-            buttonNasa.setOnClickListener { startActivityActionView("https://www.nasa.gov/") }
-            bar.replaceMenu(R.menu.menu_bottom_app_bar)
-            bar.setOnMenuItemClickListener(onMenuItemClickListener)
+        binding.textInputLayout.setEndIconOnClickListener {
+            startActivityActionView("https://en.wikipedia.org/wiki/${binding.textInputEditText.text.toString()}")
         }
 
         with(viewModel) {
@@ -78,11 +33,6 @@ class PODFragment : Fragment() {
             }
             getLiveDataPOD().observe(viewLifecycleOwner) { renderData(it) }
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 
     private fun startActivityActionView(uriString: String) {
@@ -95,11 +45,7 @@ class PODFragment : Fragment() {
                 binding.loadingLayout.visibility = View.GONE
                 binding.imageView.setImageResource(R.drawable.ic_no_photo_vector)
                 Snackbar.make(binding.root, podData.throwable.toString(), Snackbar.LENGTH_LONG)
-                    .setAction("RE-LOAD") {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                            onCheckedChangeListener.loadByDay()
-                        }
-                    }.show()
+                    .setAction("RE-LOAD") {  }.show()
             }
             PODData.Loading -> {
                 binding.loadingLayout.visibility = View.VISIBLE
@@ -109,35 +55,6 @@ class PODFragment : Fragment() {
                 podData.podResponse.url?.let { binding.imageView.load(it) }
                 podData.podResponse.title?.let { binding.title.text = it }
                 podData.podResponse.explanation?.let { binding.explanation.text = it }
-            }
-        }
-    }
-
-    companion object {
-        fun newInstance(): Fragment = PODFragment()
-    }
-
-    private enum class Days { YESTERDAY, TODAY }
-
-    private inner class OnCheckedChangeListener : ChipGroup.OnCheckedChangeListener {
-        override fun onCheckedChanged(group: ChipGroup?, checkedId: Int) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                day = when (checkedId) {
-                    R.id.chip_yesterday -> Days.YESTERDAY
-                    R.id.chip_today -> Days.TODAY
-                    else -> day //CRUTCH: when the chip is pressed again, $checkedId is returned with a value of -1. I do not know why.
-                }
-                loadByDay()
-            } else {
-                //TODO(load date if Build.VERSION.SDK_INT <= Build.VERSION_CODES.O)
-            }
-        }
-
-        @RequiresApi(Build.VERSION_CODES.O)
-        fun loadByDay() {
-            when (day) {
-                Days.YESTERDAY -> viewModel.loadPOD(LocalDate.now().minusDays(1).toString())
-                Days.TODAY -> viewModel.loadPOD(LocalDate.now().toString())
             }
         }
     }

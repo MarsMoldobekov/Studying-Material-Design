@@ -1,47 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Optimize fragment_pod.xml -->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="@drawable/ic_hamburger_menu_bottom_bar"
-            app:title="@string/app_name" />
-
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chip_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:singleSelection="@bool/fragment_pod_chipgroup_single_selection">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_yesterday"
-                style="@style/ChipChoice"
-                android:layout_marginStart="@dimen/chip_margin_start"
-                android:text="@string/yesterday" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_today"
-                style="@style/ChipChoice"
-                android:text="@string/today" />
-        </com.google.android.material.chip.ChipGroup>
-    </com.google.android.material.appbar.AppBarLayout>
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?nested_scroll_view_color"
         android:clipToPadding="false"
-        android:paddingBottom="@dimen/fragment_pod_nested_scroll_view_padding_down"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:paddingBottom="@dimen/fragment_pod_nested_scroll_view_padding_down">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -96,27 +66,6 @@
                 tools:text="@string/explanation_example" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/fragment_pod_bottom_app_bar_height"
-        android:layout_gravity="bottom"
-        android:backgroundTint="?color_primary"
-        app:hideOnScroll="true"
-        app:layout_scrollFlags="scroll|enterAlways">
-
-        <Button
-            android:id="@+id/button_nasa"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerInParent="true"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center"
-            android:text="@string/nasa" />
-    </com.google.android.material.bottomappbar.BottomAppBar>
 
     <FrameLayout
         android:id="@+id/loadingLayout"

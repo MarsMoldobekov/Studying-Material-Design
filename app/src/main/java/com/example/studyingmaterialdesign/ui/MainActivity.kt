@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import com.example.studyingmaterialdesign.R
-import com.example.studyingmaterialdesign.ui.fragments.PODFragment
+import com.example.studyingmaterialdesign.ui.fragments.MainFragment
 
 class MainActivity : AppCompatActivity() {
     private val onPreferenceChangeListener =
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.activity_main_container, PODFragment.newInstance()).commit()
+                .replace(R.id.activity_main_container, MainFragment.newInstance()).commit()
         }
     }
 

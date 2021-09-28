@@ -6,17 +6,26 @@
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_archive.xml" value="0.2703125" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_back_fab.xml" value="0.2703125" />
+        <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_earth.xml" value="0.2703125" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_favourite_menu.xml" value="0.2703125" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_hamburger_menu_bottom_bar.xml" value="0.2703125" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_load_error_vector.xml" value="0.2703125" />
+        <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_nasa_logo_icon_170926.xml" value="0.2703125" />
+        <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_picture.xml" value="0.2703125" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_plus_fab.xml" value="0.2703125" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_search.xml" value="0.2703125" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_send.xml" value="0.2703125" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_settings_menu.xml" value="0.2703125" />
+        <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_solar_flare.xml" value="0.2703125" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/drawable/ic_wikipedia.xml" value="0.2703125" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/layout/fragment_epic.xml" value="0.25416666666666665" />
+        <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/layout/fragment_flr.xml" value="0.25416666666666665" />
+        <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/layout/fragment_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/layout/fragment_pod.xml" value="0.264" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/layout/preference_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/menu/fragment_main_options_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/menu/menu_bottom_app_bar.xml" value="0.25416666666666665" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
         <entry key="..\:/Program Files/Android/StudyingMaterialDesign/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />

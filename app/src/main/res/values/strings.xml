@@ -12,4 +12,7 @@
     <string name="settings">Settings</string>
     <string name="theme_category_title">Themes</string>
     <string name="description_of_themes_list">Choose theme</string>
+    <string name="pod">Picture Of The Day</string>
+    <string name="flr">Solar Flare</string>
+    <string name="epic">Earth Polychromatic Imaging Camera</string>
 </resources>
