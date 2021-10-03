@@ -11,4 +11,11 @@
     <dimen name="fragment_pod_bottom_app_bar_height">58dp</dimen>
     <dimen name="fragment_pod_nested_scroll_view_padding_down">100dp</dimen>
     <dimen name="chip_margin_start">20dp</dimen>
+    <dimen name="card_view_margin">5dp</dimen>
+    <dimen name="recycler_view_row_item_title_text_size">24sp</dimen>
+    <dimen name="recycler_view_row_item_flr_values_text_size">16sp</dimen>
+    <dimen name="recycler_view_row_item_left_right_margin">15dp</dimen>
+    <dimen name="recycler_view_row_item_flr_top_margin">10dp</dimen>
+    <dimen name="recycler_view_row_item_flr_second_titles_text_size">20sp</dimen>
+    <dimen name="recycler_view_row_item_flr_class">10dp</dimen>
 </resources>

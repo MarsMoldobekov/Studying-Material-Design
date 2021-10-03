@@ -1,6 +1,6 @@
 package com.example.studyingmaterialdesign.ui.fragments
 
-import androidx.fragment.app.Fragment
+import com.example.studyingmaterialdesign.databinding.FragmentEpicBinding
 
-class EPICFragment : Fragment() {
-}
+//TODO(add functionality to work with selected api)
+class EPICFragment : ViewBindingFragment<FragmentEpicBinding>(FragmentEpicBinding::inflate)

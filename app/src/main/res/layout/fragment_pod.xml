@@ -68,7 +68,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <FrameLayout
-        android:id="@+id/loadingLayout"
+        android:id="@+id/fragment_pod_loading_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_gray"

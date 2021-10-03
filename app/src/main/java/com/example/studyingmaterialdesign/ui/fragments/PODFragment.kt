@@ -42,16 +42,16 @@ class PODFragment : ViewBindingFragment<FragmentPodBinding>(FragmentPodBinding::
     private fun renderData(podData: PODData) {
         when (podData) {
             is PODData.Error -> {
-                binding.loadingLayout.visibility = View.GONE
+                binding.fragmentPodLoadingLayout.visibility = View.GONE
                 binding.imageView.setImageResource(R.drawable.ic_no_photo_vector)
                 Snackbar.make(binding.root, podData.throwable.toString(), Snackbar.LENGTH_LONG)
                     .setAction("RE-LOAD") {  }.show()
             }
             PODData.Loading -> {
-                binding.loadingLayout.visibility = View.VISIBLE
+                binding.fragmentPodLoadingLayout.visibility = View.VISIBLE
             }
             is PODData.Success -> {
-                binding.loadingLayout.visibility = View.GONE
+                binding.fragmentPodLoadingLayout.visibility = View.GONE
                 podData.podResponse.url?.let { binding.imageView.load(it) }
                 podData.podResponse.title?.let { binding.title.text = it }
                 podData.podResponse.explanation?.let { binding.explanation.text = it }

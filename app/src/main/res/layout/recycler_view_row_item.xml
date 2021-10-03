@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/card_view_margin">
+
+    <!-- TODO(extract styles resources) -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/flr_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/recycler_view_row_item_left_right_margin"
+            android:layout_marginTop="@dimen/recycler_view_row_item_flr_top_margin"
+            android:text="@string/solar_flare"
+            android:textSize="@dimen/recycler_view_row_item_title_text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/flr_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/recycler_view_row_item_left_right_margin"
+            android:textSize="@dimen/recycler_view_row_item_flr_values_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/flr_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/flr_title"
+            tools:text="2021-09-04T21:06:00-FLR-001" />
+
+        <TextView
+            android:id="@+id/flr_startDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/recycler_view_row_item_left_right_margin"
+            android:layout_marginTop="@dimen/recycler_view_row_item_flr_top_margin"
+            android:text="@string/solar_flare_startDate"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flr_title" />
+
+        <TextView
+            android:id="@+id/flr_startDate_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/recycler_view_row_item_left_right_margin"
+            android:textSize="@dimen/recycler_view_row_item_flr_values_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/flr_startDate"
+            app:layout_constraintStart_toEndOf="@id/flr_startDate"
+            app:layout_constraintTop_toTopOf="@id/flr_startDate"
+            tools:text="2021-09-04T21:06Z" />
+
+        <TextView
+            android:id="@+id/flr_peakDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/recycler_view_row_item_left_right_margin"
+            android:layout_marginTop="@dimen/recycler_view_row_item_flr_top_margin"
+            android:text="@string/solar_flare_peakDate"
+            android:textSize="@dimen/recycler_view_row_item_flr_second_titles_text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flr_startDate" />
+
+        <TextView
+            android:id="@+id/flr_peakDate_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/recycler_view_row_item_left_right_margin"
+            android:textSize="@dimen/recycler_view_row_item_flr_values_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/flr_peakDate"
+            app:layout_constraintStart_toEndOf="@id/flr_peakDate"
+            app:layout_constraintTop_toTopOf="@id/flr_peakDate"
+            tools:text="2021-09-04T21:33Z" />
+
+        <TextView
+            android:id="@+id/flr_endDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/recycler_view_row_item_left_right_margin"
+            android:layout_marginTop="@dimen/recycler_view_row_item_flr_top_margin"
+            android:text="@string/solar_flare_endDate"
+            android:textSize="@dimen/recycler_view_row_item_flr_second_titles_text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flr_peakDate" />
+
+        <TextView
+            android:id="@+id/flr_endDate_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/recycler_view_row_item_left_right_margin"
+            android:textSize="@dimen/recycler_view_row_item_flr_values_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/flr_endDate"
+            app:layout_constraintStart_toEndOf="@id/flr_endDate"
+            app:layout_constraintTop_toTopOf="@id/flr_endDate"
+            tools:text="2021-09-04T21:06Z" />
+
+        <TextView
+            android:id="@+id/flr_intensity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/recycler_view_row_item_left_right_margin"
+            android:layout_marginTop="@dimen/recycler_view_row_item_flr_top_margin"
+            android:text="@string/solar_flare_intensity"
+            android:textSize="@dimen/recycler_view_row_item_flr_second_titles_text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flr_endDate" />
+
+        <TextView
+            android:id="@+id/flr_classType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/recycler_view_row_item_left_right_margin"
+            android:textSize="@dimen/recycler_view_row_item_flr_values_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/flr_intensity"
+            app:layout_constraintStart_toEndOf="@id/flr_intensity"
+            app:layout_constraintTop_toTopOf="@id/flr_intensity"
+            tools:text="B4.5" />
+
+        <TextView
+            android:id="@+id/flr_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/recycler_view_row_item_flr_class"
+            android:text="@string/solar_flare_class"
+            android:textSize="@dimen/recycler_view_row_item_flr_values_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/flr_classType"
+            app:layout_constraintStart_toEndOf="@id/flr_classType"
+            app:layout_constraintTop_toTopOf="@id/flr_classType" />
+
+        <TextView
+            android:id="@+id/flr_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/recycler_view_row_item_left_right_margin"
+            android:layout_marginTop="@dimen/recycler_view_row_item_flr_top_margin"
+            android:layout_marginBottom="@dimen/recycler_view_row_item_flr_top_margin"
+            android:text="@string/solar_flare_link"
+            android:textSize="@dimen/recycler_view_row_item_flr_second_titles_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flr_intensity" />
+
+        <TextView
+            android:id="@+id/flr_link_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/recycler_view_row_item_flr_class"
+            android:text="@string/solar_flare_class"
+            android:textSize="@dimen/recycler_view_row_item_flr_values_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/flr_link"
+            app:layout_constraintStart_toEndOf="@id/flr_link"
+            app:layout_constraintTop_toTopOf="@id/flr_link"
+            tools:text="https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/FLR/17661/1" />
+
+        <!-- TODO(add more ui elements) -->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

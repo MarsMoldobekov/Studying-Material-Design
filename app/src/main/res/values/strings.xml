@@ -15,4 +15,11 @@
     <string name="pod">Picture Of The Day</string>
     <string name="flr">Solar Flare</string>
     <string name="epic">Earth Polychromatic Imaging Camera</string>
+    <string name="solar_flare">Solar Flare</string>
+    <string name="solar_flare_startDate">Start Date:</string>
+    <string name="solar_flare_peakDate">Peak Date:</string>
+    <string name="solar_flare_endDate">End Date:</string>
+    <string name="solar_flare_intensity">Intensity:</string>
+    <string name="solar_flare_class">class</string>
+    <string name="solar_flare_link">Link:</string>
 </resources>
